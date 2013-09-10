@@ -1,0 +1,7 @@
+<% if "#{@current_version}".empty? -%>
+DROP TABLE IF EXISTS app_database_test;
+CREATE TABLE app_database_test(counter int);
+INSERT INTO app_database_test (counter) VALUES (0);
+<% else -%>
+UPDATE app_database_test SET counter=counter+1;
+<% end -%>
